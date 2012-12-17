@@ -3,14 +3,14 @@
 
 It runs under almost all \*NIX system (having bash 3.x or over).
 
-There is nothing to compile, to install it (in /usr/local/bin):
- $ sudo make install
+There is nothing to compile, to install it (in /usr/local/bin):  
+  $ sudo make install
 
-To uninstall it:
- $ sudo make uninstall
+To uninstall it:  
+  $ sudo make uninstall
 
-To run it, launch:
- $ lud.sh
+To run it, launch:  
+  $ lud.sh
 
 -----
 
