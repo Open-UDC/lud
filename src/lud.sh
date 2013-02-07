@@ -68,7 +68,7 @@ while true ; do
 		done
 		itsudid="${itsudid%;}" #remove last ';' if present.
 
-		keylist="$(curl -sS "${KeyServList[0]#*//}:11371/pks/lookup?op=index&options=mr&search=$(echo "$itsudid" | ${0%/*}/urlencode.sed)" | grep "^\(pub:\|uid:\)")"
+		keylist="$(lud_utils_GET "${KeyServList[0]#*//}:11371/pks/lookup?op=index&options=mr&search=$(echo "$itsudid" | ${0%/*}/urlencode.sed)" | grep "^\(pub:\|uid:\)")"
 		if [[ "$keylist" != pub:* ]] ; then 
 			echo "Error: \"$itsudid\" not found on the keyserver ${KeyServList[0]}"
 			continue
