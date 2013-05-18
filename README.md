@@ -12,6 +12,15 @@ To uninstall it:
 To run it, launch:  
   $ lud.sh
 
+It can be currently used to:
+
+ * create your identity for the OpenUDC web of trust (udid2)
+ * registering that identity for participating to the monetary community.
+
+Before running lud you should have created your GnuPG key pair.
+
+An Internet connection is required, for most of the functionality.
+   
 -----
 
 **[OpenUDC] (http://openudc.org)** is an open protocol for creating
