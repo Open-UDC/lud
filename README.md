@@ -1,7 +1,13 @@
 
-**lud** is an experimental implementation of an OpenUDC client.
+**ludc** (previously known as **lud**) is an experimental implementation of an OpenUDC client.
 
 It runs under almost all \*NIX system (having bash 3.x or over).
+
+Dependencies:
+ * bash versions > 3.0
+ * gnupg or gnupg2
+ * curl or wget
+ * an Internet connection, for most of the functionality. 
 
 There is nothing to compile, to install it (in /usr/local/bin):  
   $ sudo make install
@@ -17,10 +23,6 @@ It can be currently used to:
  * create your identity for the OpenUDC web of trust (udid2)
  * registering that identity for participating to the monetary community.
 
-Before running lud you should have created your GnuPG key pair.
-
-An Internet connection is required, for most of the functionality.
-   
 -----
 
 **[OpenUDC] (http://openudc.org)** is an open protocol for creating
