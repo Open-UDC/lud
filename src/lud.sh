@@ -49,25 +49,10 @@ while true ; do
 		read -t 3
 		;;
 	  4)
-		while true ; do 
-			read -p " Do you know its udid2 (y/n) ? " rep
-			case "$rep" in
-			[yYoO]*)
-				read -p " Which is ? (udid2;c;...) ? " itsudid
+				read -p " What is its udid2 (or name, KeyID...) ? " itsudid
 				if ! grep "^udid2;c;[A-Z]\{1,20\};[A-Z-]\{1,20\};[0-9-]\{10\};[0-9.e+-]\{14\};[0-9]\+;\?$" <(echo $itsudid) > /dev/null ; then
 					echo "Warning: this id ($itsudid) is not a valid udid2" >&2
 				fi
-				break
-				;;
-			[nN]*)
-				. lud_generator.env
-				itsudid="$(lud_generator_udid | sed -n 1p )"
-				echo -e "$itsudid\n"
-				break
-				;;
-			*) echo "  please answer \"yes\" or \"no\"" >&2 ;;
-			esac
-		done
 		itsudid="${itsudid%;}" #remove last ';' if present.
 
 		keylist="$(lud_utils_GET "${KeyServList[0]#*//}:11371/pks/lookup?op=index&options=mr&search=$(echo "$itsudid" | ${0%/*}/urlencode.sed)" | grep "^\(pub:\|uid:\)")"
