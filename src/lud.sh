@@ -20,12 +20,12 @@ for ((i=0;$#;)) ; do
 done
 
 while true ; do
-	echo "your id: $myudid2c"
+	echo "your id: $myudid3"
 	echo "your main OpenPGP key: $mymainkeys"
 	lud_utils_chooseinlist "Please choose what to do ?" 1 \
-					 "Register your udid2 for Universal Monetary Dividend" \
+					 "Register your udid3 for Universal Monetary Dividend" \
 					 "Change registered key for Universal Monetary Dividend" \
-					 "Generate/Check an udid2" \
+					 "Generate/Check an udid3" \
 					 "Sign or Vouch someone else" \
 					 "Synchronyse Monetary creation" \
 					 "Check the local balance of your account(s)" \
@@ -49,9 +49,9 @@ while true ; do
 		read -t 3
 		;;
 	  4)
-				read -p " What is its udid2 (or name, KeyID...) ? " itsudid
-				if ! grep "^udid2;c;[A-Z]\{1,20\};[A-Z-]\{1,20\};[0-9-]\{10\};[0-9.e+-]\{14\};[0-9]\+;\?$" <(echo $itsudid) > /dev/null ; then
-					echo "Warning: this id ($itsudid) is not a valid udid2" >&2
+				read -p " What is its udid3 (or name, KeyID...) ? " itsudid
+				if ! grep "^udid3;[A-Za-z0-9_-]\{22\}[A-Za-z][0-9.+-]\{13\};\?$" <(echo $itsudid) > /dev/null ; then
+					echo "Warning: this id ($itsudid) is not a valid udid3" >&2
 				fi
 		itsudid="${itsudid%;}" #remove last ';' if present.
 
